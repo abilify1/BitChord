@@ -120,7 +120,8 @@ android {
         }
         create("prod") {
             dimension = "env"
-            // Matches defaultConfig — this is the package already shipped/installed.
+            applicationId = "com.music.bitchord.dapa"
+            // Renamed 2026-11-07: side-by-side with upstream com.music.bitchord install.
         }
     }
 

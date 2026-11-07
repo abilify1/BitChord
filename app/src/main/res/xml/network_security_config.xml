@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Cleartext is off everywhere by default. The only exception is the
+    self-hosted Listen Together server on sgvps, which is reached by its bare
+    IP over HTTP: there is no domain and therefore no certificate for Caddy to
+    serve there. The entry is deliberately one address, not a global switch —
+    every other host, including YouTube Music, still requires TLS.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="false">213.163.201.180</domain>
+    </domain-config>
+</network-security-config>
