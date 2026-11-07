@@ -60,6 +60,9 @@ android {
     namespace = "com.music.bitchord"
     // InnerTubeX's AAR requires compiling against 37; targetSdk (runtime behaviour) stays 36.
     compileSdk = 37
+    // API 37 ships only as minor-versioned platforms (android-37.0); without this, AGP looks up
+    // the legacy android-37 target hash and R8 fails with 'Failed to find target with hash string'.
+    compileSdkMinor = 0
 
     defaultConfig {
         applicationId = "com.music.bitchord"
